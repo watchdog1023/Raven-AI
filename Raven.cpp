@@ -12,34 +12,96 @@
 #include<cstdio>
 //for date & time
 #include<ctime>
+#if defined(WIN32) || defined(__CYGWIN32__) 
+    #include<direct.h>
+#else
+	#include<sys/time.h>
+#endif
 #include<time.h>
-#include<dos.h>
 //for sleep fuction
-#include<conio.h>
-#include<windows.h>
+#if defined(WIN32) || defined(__CYGWIN32__)
+    #include<conio.h>
+    #include<windows.h>
+#endif
 #include<unistd.h>
+//For getch(),linux
+#ifdef __linux__
+    #include<termios.h>
+#endif
 //C libs to use system function
 #include<stdio.h>
 #include<stdlib.h>
 //mp3 libs
 #include "include/MP3.h"
 //Downloading
-#include<wininet.h>
-#include "include/download.h"
+#if defined(WIN32) || defined(__CYGWIN32__)
+    #include<wininet.h>
+    #include "include/download.h"
+#else
+    #include<arpa/inet.h>
+#endif
+#include<curl/curl.h>
+//UUID Generaterion
+#include <boost/uuid/uuid.hpp>            // uuid class
+#include <boost/uuid/uuid_generators.hpp> // generators
+#include <boost/uuid/uuid_io.hpp>         // streaming operators etc.
+//Tesseract-OCR
+#include<tesseract/baseapi.h>
+//#include<leptonica/allheaders.h>
 //Threading
 #include<limits.h>
 #include<boost/thread.hpp>
 #include<boost/chrono.hpp>
 #include<boost/atomic.hpp>
 #include<boost/bind.hpp>
+#ifdef __linux__
+   #include<pthread.h>
+#endif
 //Internet Connectivity 
-#include<winsock2.h>
-#include<WinSock.h>
-#include<ws2tcpip.h>
+#if defined(WIN32) || defined(__CYGWIN32__)
+    #include<winsock2.h>
+    #include<WinSock.h>
+    #include<ws2tcpip.h>
+#else
+    #include<sys/socket.h>
+    #include<sys/types.h>
+    #include<netinet/in.h>
+    #include<netdb.h>
+    #include<arpa/inet.h>
+    #include<unistd.h>
+#endif
 //Serial Connection
 #include "SerialPort.h"
 //MYSQL database
-
+#if defined(WIN32) || defined(__CYGWIN32__)
+	#include<cppconn/driver.h>
+	#include<cppconn/exception.h>
+	#include<cppconn/resultset.h>
+	#include<cppconn/statement.h>
+#elif __APPLE__
+	#include<jdbc/cppconn/driver.h>
+	#include<jdbc/cppconn/exception.h>
+	#include<jdbc/cppconn/resultset.h>
+	#include<jdbc/cppconn/statement.h>
+#elif __linux__ 
+	#ifdef __arm__
+		#include<jdbc/cppconn/driver.h>
+		#include<jdbc/cppconn/exception.h>
+		#include<jdbc/cppconn/resultset.h>
+		#include<jdbc/cppconn/statement.h>
+	#else	
+		#include<cppconn/driver.h>
+		#include<cppconn/exception.h>
+		#include<cppconn/resultset.h>
+		#include<cppconn/statement.h>
+	#endif
+#endif
+#if defined(WIN32) || defined(__CYGWIN32__)
+    #include<mysql.h>
+#else
+    #include<mysql/mysql.h>
+#endif
+#include<sqlite3.h> 
 //Video and Image Displaying
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv/cv.h>
@@ -50,6 +112,13 @@
 #include<Network.h>
 */
 #include <chrono>
+//For Voice Recognition and Voice Synthesis
+#include<sphinxbase/err.h>
+#include<sphinxbase/ad.h>
+#include<pocketsphinx/pocketsphinx.h>
+#if __linux__
+    #include<sys/select.h>
+#endif
 //Parameters
 #pragma comment(lib, "wsock32.lib")
 
