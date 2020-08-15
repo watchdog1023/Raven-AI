@@ -4,3 +4,8 @@
 [![Build Status](https://travis-ci.org/watchdog1023/Raven-AI.svg?branch=master)](https://travis-ci.org/watchdog1023/Raven-AI)
 
 This is the Titan Mechanic
+
+Error Codes:
+- Red - Not Working/Compilering/running
+- Yellow - Building but not running
+- Green - Building and Running 
