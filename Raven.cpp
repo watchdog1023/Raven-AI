@@ -1,5 +1,12 @@
 //This AI is incharge of the titan platforms and the space elevator in project TITAN
 //build raven_come_skykru
+//Check for C++ Compiler
+#ifndef __cplusplus
+	#error A C++ compiler is required!
+#endif
+#ifdef __clang__
+	#error Raven will not compile with clang,please use gcc
+#endif
 #include<iostream>
 #include<sstream>
 #include<fstream>
@@ -119,6 +126,9 @@
 #if __linux__
     #include<sys/select.h>
 #endif
+//Titan Robotics Lib
+#include "Titans.h"
+
 //Parameters
 #pragma comment(lib, "wsock32.lib")
 
@@ -225,7 +235,10 @@ void connect_to_mega(string pinset)
             arduino.readSerialPort(output, MAX_DATA_LENGTH);
             if(output == "GOOD")
                 {
-                    
+
+                    #ifdef DEBUG
+                        cout << "ok" << endl;
+                    #endif
                 }
             if(output == "BAD")
                 {
