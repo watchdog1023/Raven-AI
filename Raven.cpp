@@ -38,11 +38,9 @@
 //C libs to use system function
 #include<stdio.h>
 #include<stdlib.h>
-//mp3 libs
-#include "include/MP3.h"
 //Downloading
 #if defined(WIN32) || defined(__CYGWIN32__)
-    #include<wininet.h>
+    #include <wininet.h>
     #include "include/download.h"
 #else
     #include<arpa/inet.h>
@@ -78,7 +76,7 @@
     #include<unistd.h>
 #endif
 //Serial Connection
-#include "SerialPort.h"
+//#include "SerialPort.h"
 //MYSQL database
 #if defined(WIN32) || defined(__CYGWIN32__)
 	#include<cppconn/driver.h>
@@ -133,7 +131,6 @@
 #pragma comment(lib, "wsock32.lib")
 
 using namespace std;
-using namespace mp3;
 
 //functions
 string encrypt(string msg, string const& key)
@@ -209,7 +206,7 @@ void test()
             }
 }
 
-void connect_to_mega(string pinset)
+/*void connect_to_mega(string pinset)
 {
     char output[MAX_DATA_LENGTH];
     //Portname must contain these backslashes, and remember to replace the following com port
@@ -259,7 +256,7 @@ void connect_to_mega(string pinset)
                 }
             delete[] c_string;
         }
-}
+}*/
 
 int main()
 {
@@ -276,9 +273,6 @@ int main()
 	tgroup.create_thread(boost::bind(test));
     system("color 02");
     cout << "I am Raven" << endl;
-    PlayMP3("voice/greedings.mp3");
-    sleep(4);
-    StopMP3("voice/greedings.mp3");
     loop:
         cout << "I am the Chief Mechanic on Project TITAN" << endl;
         // output current date

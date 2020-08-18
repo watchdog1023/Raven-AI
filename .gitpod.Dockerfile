@@ -4,7 +4,7 @@ USER root
 RUN apt update
 RUN apt upgrade -y
 #Grabbing Deps
-RUN apt-get install libmpich-dev python3 python3-pip build-essential make swig libboost-all-dev libsfml-dev libtesseract-dev bash splint shellcheck -y
+RUN apt-get install libmpich-dev python3 python3-pip build-essential make swig libboost-all-dev libsfml-dev libtesseract-dev bash splint shellcheck checkinstall -y
 #get packager
 RUN pip3 install cpplint requests
 #Grabbing Titan Robotics repo Deps
@@ -20,6 +20,7 @@ RUN dpkg -i pocketsphinx_5prealpha-1_amd64.deb
 #Cleaning
 RUN apt-get clean
 RUN rm *.deb
+RUN rm /usr/local/include/sphinxbase/prim_type.h
 USER gitpod
 
 # Install custom tools, runtimes, etc.
