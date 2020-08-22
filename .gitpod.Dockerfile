@@ -12,11 +12,13 @@ RUN wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian
 RUN wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/libtitan_1-1_amd64.deb
 RUN wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sphinxbase_5prealpha-1_amd64.deb
 RUN wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/pocketsphinx_5prealpha-1_amd64.deb
+RUN wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sqlite3_3330000-1_amd64.deb
 #Installing Debs
 RUN dpkg -i jsoncpp_3.13.2-1_amd64.deb
 RUN dpkg -i libtitan_1-1_amd64.deb
 RUN dpkg -i sphinxbase_5prealpha-1_amd64.deb
 RUN dpkg -i pocketsphinx_5prealpha-1_amd64.deb
+RUN dpkg -i sqlite3_3330000-1_amd64.deb
 #Cleaning
 RUN apt-get clean
 RUN rm *.deb

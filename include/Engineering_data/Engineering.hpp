@@ -2,6 +2,8 @@
 #define ENGINEERING
 
 #include<string>
+//SQLite3
+#include<sqlite3.h>
 
 //Enigneering Namespace Delcartions
 #include "Electrical.hpp"
