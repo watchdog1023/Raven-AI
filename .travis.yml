@@ -1,0 +1,46 @@
+language: cpp
+cache:
+  apt: true
+  pip: true
+
+matrix:
+  include:
+  - name: "Raven On Linux"
+    os: linux
+    dist: Bionic
+    compiler: gcc
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++-8
+          - gcc-8
+          - gfortran-8
+        env:
+          - CXX='g++-8'
+          - CC='gcc-8'
+          - CFLAGS='-DNRUNS=100000000'
+    cache:
+        directories:
+          - opencv-3.4.3/
+          - mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/
+          - libtensorflow-cpu-linux-x86_64-1.13.1/
+          - assets/
+    script:
+      - sudo apt update
+      - sudo apt-get install dos2unix bash tree -y
+      - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/jsoncpp_3.13.2-1_amd64.deb
+      - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/libtitan_1-1_amd64.deb
+      - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sphinxbase_5prealpha-1_amd64.deb
+      - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/pocketsphinx_5prealpha-1_amd64.deb
+      - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sqlite3_3330000-1_amd64.deb
+      - dpkg -i jsoncpp_3.13.2-1_amd64.deb
+      - dpkg -i libtitan_1-1_amd64.deb
+      - dpkg -i sphinxbase_5prealpha-1_amd64.deb
+      - dpkg -i pocketsphinx_5prealpha-1_amd64.deb
+      - dpkg -i sqlite3_3330000-1_amd64.deb
+      - rm *.deb
+      - dos2unix build-linux.sh
+      - chmod -v 777 build-linux.sh
+      - ./build-linux.sh
