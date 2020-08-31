@@ -1,4 +1,5 @@
 language: cpp
+sudo: True
 cache:
   apt: true
   pip: true
