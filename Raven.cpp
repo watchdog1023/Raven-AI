@@ -126,7 +126,8 @@
 #endif
 //Titan Robotics Lib
 #include "Titans.h"
-
+//CAD functions
+#include "include/engineering/CAD.hpp"
 //Parameters
 #pragma comment(lib, "wsock32.lib")
 

@@ -8,7 +8,7 @@ This is the Titan Mechanic
 
 # Error Codes:
 
-- Red - Not Working/Compilering/running [![Code Red](https://img.shields.io/badge/Error-Code%3ARed-Red)]()
+- Red - Not Working/Compiling/running [![Code Red](https://img.shields.io/badge/Error-Code%3ARed-Red)]()
 - Yellow - Building but not running [![Code Yellow](https://img.shields.io/badge/Error-Code%3AYellow-Yellow)]()
 - Green - Building and Running [![Code Gree](https://img.shields.io/badge/Error-Code%3AGreen-Green)]()
 
