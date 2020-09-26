@@ -19,3 +19,8 @@ Oldest Sister - Lexa-AI (https://github.com/watchdog1023/Lexa-AI)
 Second Youngest Sister - Lara-AI (https://github.com/watchdog1023/Lara-AI)
 
 Youngest Sister - Ciri-AI (https://github.com/watchdog1023/Ciri-AI)
+
+
+# Notes
+
+A C++17 compiler is required to build Raven-AI (Gcc 8+)
