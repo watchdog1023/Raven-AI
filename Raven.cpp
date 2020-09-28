@@ -7,6 +7,7 @@
 #ifdef __clang__
 	#error Raven will not compile with clang,please use gcc
 #endif
+#define RAVEN_COME_SKYKRU
 #include<iostream>
 #include<sstream>
 #include<fstream>

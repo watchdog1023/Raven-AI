@@ -23,4 +23,4 @@ Youngest Sister - Ciri-AI (https://github.com/watchdog1023/Ciri-AI)
 
 # Notes
 
-A C++17 compiler is required to build Raven-AI (Gcc 8+)
+A C++17 compiler is required to build Raven-AI (GCC 8+)
