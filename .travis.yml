@@ -4,7 +4,7 @@ cache:
   pip: true
 
 matrix:
-  exclude:
+  include:
   - name: "Raven On Linux"
     os: linux
     dist: Bionic
