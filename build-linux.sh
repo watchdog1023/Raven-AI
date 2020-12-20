@@ -62,5 +62,6 @@ else
         cd ../..
     fi
 fi
+sudo apt-get install libboost-all-dev
 
 g++ -v -Iinclude/ -Iassets/usr/local/include -I/usr/local/include/pocketsphinx/ -I/usr/local/include/sphinxbase -c Raven.cpp  -fpermissive -Wfatal-errors
