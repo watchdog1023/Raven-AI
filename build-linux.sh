@@ -1,9 +1,7 @@
-if [ $GITPOD == "YES" ]; then
-    mkdir assets/
-    mkdir assets/usr/
-    mkdir assets/usr/local/
-fi
-if [ ! -e mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/ ]; then
+mkdir assets/
+mkdir assets/usr/
+mkdir assets/usr/local/
+#if [ ! -e mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/ ]; then
     wget -c https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit.tar.gz
     tar xf mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit.tar.gz
     cp -vr mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/include/jdbc/* mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/include/
@@ -13,9 +11,9 @@ if [ ! -e mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/ ]; then
     else
         cp -vr mysql-*/* assets/usr/local/
     fi
-else
-    cp -vr mysql-*/* assets/usr/local/
-fi
+#else
+#    cp -vr mysql-*/* assets/usr/local/
+#fi
 if [ ! -e opencv-3.4.3/ ]; then 
     wget -c https://github.com/opencv/opencv/archive/3.4.3.zip
     wget -c https://github.com/opencv/opencv_contrib/archive/3.4.3.zip -O contrib-343.zip
