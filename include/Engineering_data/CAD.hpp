@@ -97,7 +97,6 @@ namespace CAD
                         }
                 }
         }
-        }
     void CAD_Open(string filename_open)
         {
             if(filename.substr(filename.find_last_of(".") + 1) == "scad") 
