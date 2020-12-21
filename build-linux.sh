@@ -61,5 +61,10 @@ else
     fi
 fi
 sudo apt-get install libboost-all-dev libsfml-dev libtesseract-dev
+if [ $GITPOD == "YES" ]; then 
+    cp include/prim_type.h assets/usr/local/include/sphinxbase/prim_type.h 
+else 
+    sudo cp include/prim_type.h /usr/local/include/sphinxbase/prim_type.h
+fi
 
 g++ -v -Iinclude/ -Iassets/usr/local/include -I/usr/local/include/pocketsphinx/ -I/usr/local/include/sphinxbase -c Raven.cpp  -fpermissive -Wfatal-errors
