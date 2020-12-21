@@ -83,13 +83,13 @@ namespace CAD
                             if (new_file.is_open())
                                 {
                                     #ifdef RAVEN_COME_SKYKRU
-                                        new_file << "//Made by Raven-AI (" + ID[0] + ")" << endl;
+                                        new_file << "//Made by Raven-AI (" + to_string(ID[0]) + ")" << endl;
                                     #elif LEXA_COME_TREEKRU
-                                        new_file << "//Made by Lexa-AI (" + ID[1] + ")" << endl;
+                                        new_file << "//Made by Lexa-AI (" + to_string(ID[1]) + ")" << endl;
                                     #elif LARA_TOMB
-                                        new_file << "//Made by Lara-AI (" + ID[2] + ")" << endl;
+                                        new_file << "//Made by Lara-AI (" + to_string(ID[2]) + ")" << endl;
                                     #elif CIRI_HOUSE_OF_CAT
-                                        new_file << "//Made by Ciri-AI (" + ID[3] + ")" << endl;
+                                        new_file << "//Made by Ciri-AI (" + to_string(ID[3]) + ")" << endl;
                                     #endif
                                     new_file << contents;
                                     new_file.close();
