@@ -14,7 +14,7 @@ mkdir assets/usr/local/
 #else
 #    cp -vr mysql-*/* assets/usr/local/
 #fi
-if [ ! -e opencv-3.4.3/ ]; then 
+'''if [ ! -e opencv-3.4.3/ ]; then 
     wget -c https://github.com/opencv/opencv/archive/3.4.3.zip
     wget -c https://github.com/opencv/opencv_contrib/archive/3.4.3.zip -O contrib-343.zip
     unzip -qq 3.4.3.zip
@@ -59,7 +59,7 @@ else
         fi
         cd ../..
     fi
-fi
+fi'''
 sudo apt-get install libboost-all-dev libsfml-dev libtesseract-dev
 if [ $GITPOD == "YES" ]; then 
     cp include/prim_type.h assets/usr/local/include/sphinxbase/prim_type.h 

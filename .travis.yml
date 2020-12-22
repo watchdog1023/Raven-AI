@@ -23,7 +23,6 @@ matrix:
           - CFLAGS='-DNRUNS=100000000'
     cache:
         directories:
-          - opencv-3.4.3/
           - mysql-connector-c++-8.0.16-linux-glibc2.12-x86-64bit/
           - libtensorflow-cpu-linux-x86_64-1.13.1/
           - assets/
@@ -35,11 +34,13 @@ matrix:
       - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sphinxbase_5prealpha-1_amd64.deb
       - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/pocketsphinx_5prealpha-1_amd64.deb
       - wget -c https://sourceforge.net/projects/titan-robotics/files/AI/Deps/Debian%28Deb%29/sqlite3_3330000-1_amd64.deb
+      - wget -c https://sourceforge.net/project/titan-robotics/AI/Deps/Debian%28Deb%29/opencv-3.3.1_amd64.deb
       - sudo dpkg -i jsoncpp_3.13.2-1_amd64.deb
       - sudo dpkg -i libtitan_1-1_amd64.deb
       - sudo dpkg -i sphinxbase_5prealpha-1_amd64.deb
       - sudo dpkg -i pocketsphinx_5prealpha-1_amd64.deb
       - sudo dpkg -i sqlite3_3330000-1_amd64.deb
+      - sudo dpkgg -i opencv-3.3.1_amd64.deb
       - sudo rm *.deb
       - dos2unix build-linux.sh
       - chmod -v 777 build-linux.sh
