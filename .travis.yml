@@ -40,7 +40,7 @@ matrix:
       - sudo dpkg -i sphinxbase_5prealpha-1_amd64.deb
       - sudo dpkg -i pocketsphinx_5prealpha-1_amd64.deb
       - sudo dpkg -i sqlite3_3330000-1_amd64.deb
-      - sudo dpkgg -i opencv-3.3.1_amd64.deb
+      - sudo dpkg -i opencv-3.3.1_amd64.deb
       - sudo rm *.deb
       - dos2unix build-linux.sh
       - chmod -v 777 build-linux.sh
